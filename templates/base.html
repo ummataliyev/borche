@@ -1,0 +1,206 @@
+{% load static %}
+{% load i18n %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
+  <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
+  <meta name="author" content="elemis">
+  <title>Borche.uz</title>
+  <link rel="icon" href="{% static '/favicon.ico" type="image/x-icon' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/colors/grape.css' %}">
+  <link rel="preload" href="{% static 'assets/css/fonts/space.css' %}" as="style" onload="this.rel='stylesheet'">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+  <link rel="stylesheet" href="{% static 'path/to/font-awesome/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-vt6aTNsK4RaQEu3fWIZi3n+3Om1mrTbhrhF5pX0qWePT9VCJpQf5g68NSUL4W4rR" crossorigin="anonymous">
+
+  <style>
+    /* Styles for the modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .modal-close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .modal-close:hover,
+    .modal-close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .background-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <header class="position-absolute w-100">
+      <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+        <div class="container flex-lg-row flex-nowrap align-items-center">
+          <div class="navbar-brand w-100">
+            <a href="{% url 'home' %}" style="display: inline-block;">
+              <img src={% static './media/logo-removebg-preview.png' %} srcset={% static './media/logo-removebg-preview.png' %} alt="" style="width: 100%; max-width: 400px;" />
+            </a>            
+          </div>
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div class="offcanvas-header d-lg-none">
+              <h3 class="text-white fs-30 mb-0">Borche</h3>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'home' %}" style="color: black;">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'products' %}" style="color: black;">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about-us' %}" style="color: black;">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact-us' %}" style="color: black;">{% blocktrans %}Biz bilan bog'lanish{% endblocktrans %}</a>
+                </li>                
+            </div>
+          </div>
+          <div class="navbar-other w-100 d-flex ms-auto">
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+              <li class="nav-item dropdown language-select text-uppercase">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
+                  {% get_current_language as LANGUAGE_CODE %}
+                  {% get_available_languages as LANGUAGES %}
+                  {% get_language_info_list for LANGUAGES as languages %}
+                  {% for language in languages %}
+                    {% if language.code == LANGUAGE_CODE %}
+                      {{ language.code }}
+                    {% endif %}
+                  {% endfor %}
+                </a>
+                <ul class="dropdown-menu">
+                  <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    {% for language in languages %}
+                      <li class="nav-item">
+                        <button class="dropdown-item" type="submit" name="language" value="{{ language.code }}" style="text-transform: uppercase;">
+                          {{ language.code }}
+                        </button>
+                      </li>
+                    {% endfor %}
+                  </form>
+                </ul>
+              </li>
+              <li class="nav-item d-lg-none">
+                <button class="hamburger offcanvas-nav-btn"><span></span></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
+
+{% block content %}
+
+{% endblock content %}
+
+<footer class="bg-dark text-inverse mt-0 mt-md-16">
+  <div class="container py-13 py-md-15">
+    <div class="row gy-6 gy-lg-0 justify-content-center">
+      <div class="col-md-4 col-lg-3">
+        <div class="widget">
+          <img class="mb-4" src="{% static 'media/yellow-logo.svg' %}" alt="" style="width: 100%; max-width: 200px;" />
+          <p>© 2023 Borche.uz</p>
+          <nav class="nav social social-white">
+            <a href="https://www.facebook.com/profile.php?id=100086471061320&mibextid=LQQJ4d" target="_blank"><i class="uil uil-facebook-f"></i></a>
+            <a href="https://instagram.com/borcheuz?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="uil uil-instagram"></i></a>
+            <a href="https://youtube.com/@borcheuzbekistan5691" target="_blank"><i class="uil uil-youtube"></i></a>
+          </nav>
+          <!-- /.social -->
+        </div>
+        <!-- /.widget -->
+      </div>
+      <!-- /column -->
+      <div class="col-md-4 col-lg-3">
+        <div class="widget">
+          <h4 class="widget-title text-white mb-3">{% blocktrans %} Aloqa uchun {% endblocktrans %}</h4>
+          <address class="pe-xl-15 pe-xxl-">{% blocktrans %} Taxtapul ko'chasi, 348, Toshkent, O'zbekiston {% endblocktrans %}</address>
+          <span>info@borche.uz</span></a><br /> +998 (94) 060 00 10
+        </div>
+        <!-- /.widget -->
+      </div>
+      <!-- /column -->
+      <div class="col-md-4 col-lg-3">
+        <div class="widget">
+          <h4 class="widget-title text-white mb-3">{% blocktrans %} Ba'tafsil ma'lumot uchun {%endblocktrans%}</h4>
+          <ul class="list-unstyled mb-0">
+            <li><a href="{% url 'home' %}">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a></li>
+            <li><a href="{% url 'about-us' %}">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a></li>
+            <li><a href="{% url 'products' %}">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a></li>
+            <li><a href="{% url 'contact-us' %}">{% blocktrans %}Biz bilan bog'lanish{% endblocktrans %}</a></li>
+          </ul>          
+        </div>
+        <!-- /.widget -->
+      </div>
+      <!-- /column -->
+    </div>
+    <!--/.row -->
+  </div>
+  <!-- /.container -->
+</footer>
+
+
+{% block javascript %}
+
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<script src="{% static 'assets/js/theme.js' %}"></script>
+
+{% endblock javascript %}

@@ -1,0 +1,4 @@
+django==4.2.2
+flake8==6.0.0
+pillow==10.0.0
+pip-chill==1.0.3

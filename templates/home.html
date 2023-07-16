@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% blocktrans %} Bosh sahifa {% endblocktrans %}
+{% endblock title %}
+
+{% block content %}
+
+    <section class="wrapper bg-gray">
+      <div class="row position-relative">
+        <div class="container pt-10 pt-md-14 text-center">
+          <div class="position-relative" style="bottom: 0; left: 0; z-index: 2;">
+            <video src="{% static './media/home_page_video.mp4' %}" style="width: 100%;" autoplay loop muted></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}
