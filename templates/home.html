@@ -7,15 +7,70 @@
 {% endblock title %}
 
 {% block content %}
-
     <section class="wrapper bg-gray">
       <div class="row position-relative">
         <div class="container pt-10 pt-md-14 text-center">
           <div class="position-relative" style="bottom: 0; left: 0; z-index: 2;">
-            <video src="{% static './media/home_page_video.mp4' %}" style="width: 100%;" autoplay loop muted></video>
+            <video src="{% static 'media/home_page_video.mp4' %}" style="width: 100%;" autoplay loop muted></video>
           </div>
         </div>
       </div>
     </section>
+
+  </section>
+  <div class="entry-content">
+    <section id="introduction">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="inner">
+              <h2>Pioneering In China, Leading In IMM Industry</h2>
+              <p>Thanks to many years’ technical foundation, we are honored with 13 awards related to Multi-component IMM techniques as follows: the first Chinese ultra-large rotary platen, the first Chinese large size two-platen three-component IMM, the first Chinese five-component IMM, the first Chinese electrical “one unit-dual mold” system, first Chinese sandwich-injection molding system, etc.</p>
+            </div>
+          </div>
+  
+          <div class="col-lg-6">
+            <!-- Add the "position-relative" class to the img element -->
+            <img src="{% static 'media/borche-machinist.png' %}" class="position-relative" style="width: 100%;">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="swiper-container swiper-auto swiper-auto-xs mb-8" data-margin="40" data-nav="false" data-dots="false" data-centered="true" data-loop="true" data-items-auto="true" data-autoplay="true" data-autoplaytime="1" data-drag="false" data-resizeupdate="false" data-speed="7000">
+    <div class="swiper overflow-visible pe-none">
+      <div class="swiper-wrapper ticker">
+        <div class="swiper-slide">
+          <figure class="rounded-xl shadow-xl">
+            <img src="{% static 'media/BD.jpg' %}"/>
+          </figure>
+        </div>
+        <div class="swiper-slide">
+          <figure class="rounded-xl shadow-xl">
+            <img src="{% static 'media/BE.jpg' %}"/>
+          </figure>
+        </div>
+        <div class="swiper-slide">
+          <figure class="rounded-xl shadow-xl">
+            <img src="{% static 'media/BM.jpg' %}"/>
+          </figure>
+        </div>
+        <div class="swiper-slide">
+          <figure class="rounded-xl shadow-xl">
+            <img src="{% static 'media/BU-V.jpg' %}"/>
+          </figure>
+        </div>
+        <div class="swiper-slide">
+          <figure class="rounded-xl shadow-xl">
+            <img src="{% static 'media/BM.jpg' %}"/>
+          </figure>
+        </div> 
+      </div>
+      <!--/.swiper-wrapper -->
+    </div>
+    <!-- /.swiper -->
+  </div>
 
 {% endblock content %}

@@ -8,9 +8,8 @@
 
 {% block content %}
 
-<section class="wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white">
-  <div class="bg-image-holder"
-    style="background-image: url('{% static './media/borche.jpg' %}'); background-size: cover; width: 100%; height: 800px;">
+<section class="wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white position:relative">
+  <div class="bg-image-holder" style="background-image: url('{% static './media/borche.jpg' %}'); background-size: cover; background-attachment;">
     <!-- Rest of the content -->
     <div class="container pt-17 pb-20 pt-md-19 pb-md-21 text-center"></div>
   </div>
@@ -25,12 +24,12 @@
               <div class="row gx-0">
                 <div class="col-lg-6 align-self-stretch">
                   <div class="map map-full rounded-top rounded-lg-start">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3488.924828436402!2d69.2603773592001!3d41.34213507683886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b676d1b0227%3A0x6afd84e2709d13f2!2sBorche!5e0!3m2!1sen!2s!4v1687429828415!5m2!1sen!2s"
-                      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3488.924828436402!2d69.2603773592001!3d41.34213507683886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b676d1b0227%3A0x6afd84e2709d13f2!2sBorche!5e0!3m2!1sen!2s!4v1687429828415!5m2!1sen!2s"
+                    style="width:100%; height: 100%; border:0" allowfullscreen></iframe>
                   </div>
+                  <!-- /.map -->
                 </div>
+                <!--/column -->
                 <div class="col-lg-6">
                   <div class="p-10 p-md-11 p-lg-14">
                     <div class="d-flex flex-row">
@@ -39,8 +38,8 @@
                             style="color: #fff103;"></i> </div>
                       </div>
                       <div class="align-self-start justify-content-start">
-                        <h5 class="mb-1">{% blocktrans %} Manzil {% endblocktrans %}</h5>
-                        <address>{% blocktrans %} Taxtapul ko'chasi 348,{% endblocktrans %} <br> {% blocktrans %}Toshkent, O'zbekiston {% endblocktrans %}</address>
+                        <h5 class="mb-1">Manzil</h5>
+                        <address>Taxtapul ko'chasi 348, <br class="d-none d-md-block" /> <br> Toshkent, O'zbekiston
                         </address>
                       </div>
                     </div>
@@ -51,7 +50,7 @@
                             style="color: #fff103;"></i> </div>
                       </div>
                       <div>
-                        <h5 class="mb-1">{% blocktrans %} Phone {% endblocktrans %}</h5>
+                        <h5 class="mb-1">Telefon raqami</h5>
                         <p>+998 (94) 060 00 10</p>
                       </div>
                     </div>
@@ -62,7 +61,7 @@
                             style="color: #fff103;"></i> </div>
                       </div>
                       <div>
-                        <h5 class="mb-1">E-mail</h5>
+                        <h5 class="mb-1">Elektron pochta</h5>
                         <p>info@borche.uz</p>
                       </div>
                     </div>
@@ -81,14 +80,15 @@
         <!-- /.row -->
         <div class="row">
           <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-            <h2 class="display-4 mb-3 text-center">{% blocktrans %} Bizga xabar qoldiring {% endblocktrans %}</h2>
-            <p class="lead text-center mb-10">{% blocktrans %} Quyidagi bo'limda kerakli ma'lumotlarni qoldiring va tez orada aloqaga chiqamiz {% endblocktrans %}</p>
+            <h2 class="display-4 mb-3 text-center">Bizga xabar qoldiring</h2>
+            <p class="lead text-center mb-10">Quyidagi bo'limda kerakli ma'lumotlarni qoldiring va tez orada aloqaga chiqamiz
+            </p>
             <form class="contact-form" id="contact-form">
               <div class="row gx-4">
                 <div class="col-12">
                   <div class="form-floating mb-4">
                     <input id="form_name" type="text" name="name" class="form-control" placeholder="Jane" required="">
-                    <label for="form_name">{% blocktrans %} Ism * {% endblocktrans%}</label>
+                    <label for="form_name">Ism *</label>
                     <div class="valid-feedback">Looks good!</div>
                     <div class="invalid-feedback">Please enter your name.</div>
                   </div>
@@ -96,13 +96,13 @@
                 <div class="col-12">
                   <div class="form-floating mb-4">
                     <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="+998" pattern="\+998\d{9}" required="" value="+998">
-                    <label for="form_phone">{% blocktrans %} Telefon raqami {% endblocktrans %} *</label>
+                    <label for="form_phone">Telefon raqami *</label>
                     <div class="valid-feedback">Looks good!</div>
                     <div class="invalid-feedback">Please enter a valid phone number starting with "+998".</div>
                   </div>
                 </div>
                 <div class="col-12 text-center">
-                  <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value={% blocktrans %}"Jo'natish" {% endblocktrans %}>
+                  <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value="Jo'natish">
                 </div>
               </div>
             </form>
