@@ -3,11 +3,90 @@
 {% load i18n %}
 
 {% block content %}
+
+
 <section class="wrapper bg-light">
   <div class="py-5">
     <div class="container">
       <h1 class="my-15">{% blocktrans %}Mahsulotlar{% endblocktrans %}</h1>
       <hr class="mb-4">
+      <section>
+        <div class="blog grid grid-view">
+          <div class="row isotope gx-md-8 gy-8 mb-8">
+            <article class="item post col-md-6">
+              <div class="card">
+                <figure class="card-img-top"><img src="{% static 'media/BU-V.jpg' %}"/></a></figure>
+                <div class="card-body">
+                  <div class="post-header">
+                    <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">BU-V Series</a></h2>
+                  </div>
+                  <div class="post-content">
+                    <p>
+                      {% blocktrans %}Borche BU6800 - qisish kuchi va in'ektsiya hajmining kombinatsiyasi, shuningdek quvvatni tejash effekti jihatidan Osiyodagi eng katta ikkita plastinka qarshi kalıplama mashinasi. Siqish kuchi 68000 KN ga etadi. Borche Intelligent Two-Platen IMM juda uzoq umr ko'rish qobiliyatiga ega, aniq, barqaror va ishonchli ishlash, kamroq oyoq izi va kamroq parvarishlash bosh og'rig'iga ega.{% endblocktrans %}
+                    </p>
+                  </div>
+                  <!-- /.post-content -->
+                </div>
+              </div>
+              <!-- /.card -->
+            </article>
+            <!-- /.post -->
+            <article class="item post col-md-6">
+              <div class="card">
+                <figure class="card-img-top"><img src="{% static 'media/Bi.jpeg' %}"/></a>
+                </figure>
+                <div class="card-body">
+                  <div class="post-header">
+                    <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">Bi Series</a></h2>
+                  </div>
+                  <!-- /.post-header -->
+                  <div class="post-content">
+                    <p>
+                      {% blocktrans %}Bi seriyali periferik uskunalarni ulash va ikki tomonlama ma'lumotlar aloqasini amalga oshirishga qodir, bu periferik uskunaning ma'lumotlarini mashinalar boshqaruvchisiga birlashtiradi. Mashina PlasCloud platformasiga ma'lumotlarni to'plash va aloqa qilish, mashinaning haqiqiy holatini, texnik parametrlarini va periferik uskunalar holatini yuklash uchun boshqa interfeys bilan jihozlangan.{% endblocktrans %}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card -->
+            </article>
+            <!-- /.post -->
+            <article class="item post col-md-6">
+              <div class="card">
+                <figure class="card-img-top"><img src="{% static 'media/BE.jpg' %}"/></a>
+                </figure>
+                <div class="card-body">
+                  <div class="post-header">
+                    <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">BS-III Series</a></h2>
+                  </div>
+                  <div class="post-content">
+                    <p>
+                      {% blocktrans %}BS-Ill Servo seriyali mos quvvat tizimi, yuqori aniqlikdagi nazorat, barqaror ishlash, yuqori ko'p qirrali va turli ishlab chiqarish talablarini qondiradigan uch o'lchamdagi vintli barrel bilan ajralib turadi.{% endblocktrans %}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card -->
+            </article>
+            <!-- /.post -->
+            <article class="item post col-md-6">
+              <div class="card">
+                <figure class="card-img-top"><img src="{% static 'media/BD.jpg' %}"/></a>
+                </figure>
+                <div class="card-body">
+                  <div class="post-header">
+                    <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">BD Series</a></h2>
+                  </div>
+                  <div class="post-content">
+                    <p>
+                      {% blocktrans %}Borchening yangi avlod elektr mashinasi BD seriyali to'g'ridan-to'g'ri haydovchi texnologiyasi bilan ajralib turadi. BD seriyali mustaqil intellektual mulk huquqlari, to'g'ridan-to'g'ri haydovchi tuzilmasi, inyeksion kalıplamaning aqlli boshqaruvi, katta ma'lumotlar orqali jarayonni optimallashtirish afzalliklarini birlashtiradi.{% endblocktrans %}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
       <div class="row">
         {% for product in products %}
           <div class="col-md-4">
